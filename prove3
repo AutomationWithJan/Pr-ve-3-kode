@@ -1,0 +1,47 @@
+
+
+int tall = 0;
+int knapp = 7;
+int input = 0;
+
+int KalkulertVerdi = 0 ;
+int a = 3;
+int b = 4;
+int c = 2;
+int d = 4;
+
+void setup() {
+  // put your setup code here, to run once:
+
+pinMode(knapp, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  input = digitalRead (knapp);  
+  if (input == HIGH){
+    tall = 1;
+    KalkulertVerdi = 0;
+  }
+switch(tall){           //Switch case. Her kan vi kjøre flere scenarioer i koden vår
+  case 1: 
+  //Her kommer den første casen
+  KalkulertVerdi = a+b;
+  tall = 2;
+  break;    //break tvinger arduino ut av casen slik at restena av koden kan kjøre
+
+  case 2: //Her er case nummer 2
+  KalkulertVerdi = KalkulertVerdi - d;
+  tall = 3;
+  break;              //break tvinger arduino ut av casen slik at restena av koden kan kjøre
+
+  case 3:
+  
+  KalkulertVerdi = KalkulertVerdi * c;
+  tall = 0;
+  break;        //break tvinger arduino ut av casen slik at restena av koden kan kjøre
+}
+  
+
+  delay(500);
+}
